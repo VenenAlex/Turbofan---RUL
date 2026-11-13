@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turbofan-rul"
+version = "1.0.0"
+description = "Remaining-useful-life prediction for NASA C-MAPSS turbofan engines, served and monitored"
+readme = "README.md"
+requires-python = ">=3.11"
+# Pinned dependencies live in requirements/*.txt, one file per service image.
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["slow: trains a model or reads the full dataset"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["notebooks"]  # exploratory research notebook, kept as written
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "D"]
+ignore = [
+    "N803", "N806",  # X / X_test: capital X for a feature matrix is the ML convention
+    "D105", "D107",  # magic methods and __init__ are documented on the class
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]

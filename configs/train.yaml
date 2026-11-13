@@ -1,0 +1,17 @@
+# Full training run. Reproduces the notebook: 27 XGBoost combinations x 5 GroupKFold
+# folds, plus the two baselines. Takes about 10 minutes on a laptop CPU.
+cv_folds: 5
+random_state: 0
+
+xgboost:
+  fixed:            # applied to every combination
+    subsample: 0.8
+    colsample_bytree: 0.8
+  grid:             # searched
+    max_depth: [3, 4, 6]
+    learning_rate: [0.03, 0.05, 0.1]
+    n_estimators: [200, 400, 800]
+
+random_forest:
+  n_estimators: 200
+  min_samples_leaf: 5

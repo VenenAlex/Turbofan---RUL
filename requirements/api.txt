@@ -1,0 +1,9 @@
+# Model service (FastAPI). Kept lean: no scikit-learn, no MLflow.
+fastapi==0.162.5
+uvicorn[standard]==0.54.0
+pydantic==2.14.3
+prometheus-client==0.26.0
+numpy==2.5.4
+pandas==3.1.1
+xgboost-cpu==3.4.1; sys_platform == "linux"   # same library without the 200 MB GPU dependency
+xgboost==3.4.1; sys_platform != "linux"

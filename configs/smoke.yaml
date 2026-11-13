@@ -1,0 +1,17 @@
+# Tiny run for CI and tests: proves the pipeline works end to end in seconds.
+# The model it produces is deliberately weak; never promote it to models/.
+cv_folds: 2
+random_state: 0
+
+xgboost:
+  fixed:
+    subsample: 0.8
+    colsample_bytree: 0.8
+  grid:
+    max_depth: [3]
+    learning_rate: [0.1]
+    n_estimators: [20]
+
+random_forest:
+  n_estimators: 5
+  min_samples_leaf: 5

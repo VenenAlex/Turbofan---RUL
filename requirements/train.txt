@@ -1,0 +1,5 @@
+# Training pipeline and MLflow server.
+-r api.txt
+scikit-learn==1.7.1
+mlflow==3.18.0
+PyYAML==6.0.3

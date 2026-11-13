@@ -1,0 +1,5 @@
+# Everything, plus test and lint tools. Local setup: pip install -r requirements/dev.txt -e .
+-r train.txt
+-r dashboard.txt
+pytest==9.2.0
+ruff==0.17.4

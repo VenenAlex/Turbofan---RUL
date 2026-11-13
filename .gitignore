@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# MLflow tracking store (local runs); the promoted model in models/ IS committed
+mlflow.db
+mlruns/
+
+# Only FD001 is committed (public NASA data, ~6 MB) so CI, Docker and the demo work from a clone
+data/raw/*
+!data/raw/*_FD001.txt

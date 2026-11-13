@@ -1,0 +1,121 @@
+{
+  "name": "turbofan-rul-xgb",
+  "version": "1",
+  "run_id": "4aeaab84693345b897a6a54ae82eb412",
+  "trained_at": "2026-11-12T17:41:59+00:00",
+  "params": {
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "learning_rate": 0.03,
+    "max_depth": 4,
+    "n_estimators": 200
+  },
+  "cv_rmse": 18.06,
+  "test_metrics": {
+    "rmse": 19.56,
+    "mae": 14.02,
+    "r2": 0.779,
+    "nasa": 1259.9,
+    "due": 25,
+    "caught": 20,
+    "missed": 5,
+    "false_alarms": 1
+  },
+  "comparison": [
+    {
+      "model": "Linear regression",
+      "cv_rmse": 21.57,
+      "rmse": 21.9,
+      "mae": 17.61,
+      "r2": 0.722,
+      "nasa": 1314.0,
+      "due": 25,
+      "caught": 13,
+      "missed": 12,
+      "false_alarms": 0
+    },
+    {
+      "model": "Random forest",
+      "cv_rmse": 18.73,
+      "rmse": 21.04,
+      "mae": 14.67,
+      "r2": 0.744,
+      "nasa": 2294.3,
+      "due": 25,
+      "caught": 21,
+      "missed": 4,
+      "false_alarms": 1
+    },
+    {
+      "model": "XGBoost (tuned)",
+      "cv_rmse": 18.06,
+      "rmse": 19.56,
+      "mae": 14.02,
+      "r2": 0.779,
+      "nasa": 1259.9,
+      "due": 25,
+      "caught": 20,
+      "missed": 5,
+      "false_alarms": 1
+    }
+  ],
+  "policy": {
+    "alert_threshold": 40,
+    "maintenance_at": 30,
+    "band_edges": {
+      "Critical": 30,
+      "Warning": 60
+    }
+  },
+  "data": {
+    "dataset": "FD001",
+    "train_rows": 20631,
+    "train_engines": 100,
+    "test_engines": 100,
+    "train_sha256": "963b5e22825b34d8b21c69e1aeb4af3e647050eb672ee8834ba4b5d91d2de0f8"
+  },
+  "features": [
+    "s2",
+    "s3",
+    "s4",
+    "s7",
+    "s8",
+    "s9",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s17",
+    "s20",
+    "s21",
+    "s2_mean",
+    "s2_std",
+    "s3_mean",
+    "s3_std",
+    "s4_mean",
+    "s4_std",
+    "s7_mean",
+    "s7_std",
+    "s8_mean",
+    "s8_std",
+    "s9_mean",
+    "s9_std",
+    "s11_mean",
+    "s11_std",
+    "s12_mean",
+    "s12_std",
+    "s13_mean",
+    "s13_std",
+    "s14_mean",
+    "s14_std",
+    "s15_mean",
+    "s15_std",
+    "s17_mean",
+    "s17_std",
+    "s20_mean",
+    "s20_std",
+    "s21_mean",
+    "s21_std"
+  ]
+}
